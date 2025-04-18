@@ -116,6 +116,11 @@ int main()
 
         }
 
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
+        {
+            clearCells();
+        }
+
 
         //Render
         window.clear(sf::Color::White);

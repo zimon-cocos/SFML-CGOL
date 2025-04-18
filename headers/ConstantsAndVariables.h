@@ -12,8 +12,8 @@ float boxWidth {25.0f};
 float outlineThickness {2.0f};
 float boxesOffset{100};
 
-int boxAmountX {15};
-int boxAmountY {15};
+int boxAmountX {7};
+int boxAmountY {7};
 int boxesX {0};
 int boxesY {0};
 

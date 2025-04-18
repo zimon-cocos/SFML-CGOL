@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1744910245 source:/home/heslo-odin/Documents/c++/SFML-CGOL/main.cpp
+1744971892 source:/home/heslo-odin/Documents/c++/SFML-CGOL/main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"headers/ConstantsAndVariables.h"
@@ -516,9 +516,9 @@
 1735558136 /home/heslo-odin/Documents/SFML_Attempt_2/SFML-3.0.0/include/SFML/System/Sleep.hpp
 	<SFML/System/Export.hpp>
 
-1744909558 /home/heslo-odin/Documents/c++/SFML-CGOL/headers/ConstantsAndVariables.h
+1744971653 /home/heslo-odin/Documents/c++/SFML-CGOL/headers/ConstantsAndVariables.h
 
-1744971513 /home/heslo-odin/Documents/c++/SFML-CGOL/headers/Functions.h
+1744972332 /home/heslo-odin/Documents/c++/SFML-CGOL/headers/Functions.h
 	"Objects.h"
 
 1744910486 /home/heslo-odin/Documents/c++/SFML-CGOL/headers/Objects.h
