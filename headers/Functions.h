@@ -109,7 +109,7 @@ void nextGen(int cellNum)
         {
             std::cout << cellNum << " dies\n";
             boxes[cellNum].alive = false;
-            boxes[cellNum].shape.setFillColor(gray);
+            boxes[cellNum].shape.setFillColor(dead);
         }
 
         break;
@@ -118,7 +118,7 @@ void nextGen(int cellNum)
         {
             std::cout << cellNum << " dies\n";
             boxes[cellNum].alive = false;
-            boxes[cellNum].shape.setFillColor(gray);
+            boxes[cellNum].shape.setFillColor(dead);
         }
 
         break;
@@ -145,7 +145,7 @@ void nextGen(int cellNum)
         {
             std::cout << cellNum << " dies\n";
             boxes[cellNum].alive = false;
-            boxes[cellNum].shape.setFillColor(gray);
+            boxes[cellNum].shape.setFillColor(dead);
         }
 
         break;
@@ -154,7 +154,7 @@ void nextGen(int cellNum)
         {
             std::cout << cellNum << " dies\n";
             boxes[cellNum].alive = false;
-            boxes[cellNum].shape.setFillColor(gray);
+            boxes[cellNum].shape.setFillColor(dead);
         }
 
         break;
@@ -163,7 +163,7 @@ void nextGen(int cellNum)
         {
             std::cout << cellNum << " dies\n";
             boxes[cellNum].alive = false;
-            boxes[cellNum].shape.setFillColor(gray);
+            boxes[cellNum].shape.setFillColor(dead);
         }
 
         break;
@@ -172,7 +172,7 @@ void nextGen(int cellNum)
         {
             std::cout << cellNum << " dies\n";
             boxes[cellNum].alive = false;
-            boxes[cellNum].shape.setFillColor(gray);
+            boxes[cellNum].shape.setFillColor(dead);
         }
 
         break;
@@ -181,7 +181,7 @@ void nextGen(int cellNum)
         {
             std::cout << cellNum << " dies\n";
             boxes[cellNum].alive = false;
-            boxes[cellNum].shape.setFillColor(gray);
+            boxes[cellNum].shape.setFillColor(dead);
         }
         break;
 

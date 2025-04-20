@@ -12,9 +12,6 @@ int main()
     sf::RenderWindow window (sf::VideoMode({width,height}),"Boilerplate");
     window.setFramerateLimit(fps);
 
-
-
-
     for(int i {0}; i<boxAmountY; ++i)
         {
         for(int i {0};i<boxAmountX; ++i)
@@ -27,10 +24,6 @@ int main()
         gapX  = 0;
         gapY += boxWidth+outlineThickness*2;
         }
-
-
-
-
 
     for(long unsigned int i {0}; i<boxes.size(); ++i)
         {
@@ -86,9 +79,6 @@ int main()
                     {
                         checkCells(i);
                         nextGen(i);
-                        //boxes[i].shape.setFillColor(sf::Color::Black);
-                        std::cout<< "[" << boxes[i].gridXValue << "," << boxes[i].gridYValue << "]\n";
-                        std::cout << "Klikol si na " << i << '\n';
                     }
                     else
                     {
@@ -96,29 +86,6 @@ int main()
                         boxes[i].alive = true;
                         boxes[i].unpopulated = false;
                     }
-
-
-
-                   /* //sused S
-                    boxes[i-boxesX].shape.setFillColor(sf::Color::Green);
-                    //sused J
-                    boxes[i+boxesX].shape.setFillColor(sf::Color::Green);
-                    //sused V
-                    boxes[i+1].shape.setFillColor(sf::Color::Green);
-                    //sused Z
-                    boxes[i-1].shape.setFillColor(sf::Color::Green);
-
-                    //sused SZ
-                    boxes[i-boxesX+1].shape.setFillColor(sf::Color::Green);
-                    //sused SV
-                    boxes[i-boxesX-1].shape.setFillColor(sf::Color::Green);
-
-                    //sused JZ
-                    boxes[i+boxesX+1].shape.setFillColor(sf::Color::Green);
-                    //sused JV
-                    boxes[i+boxesX-1].shape.setFillColor(sf::Color::Green);
-*/
-
                 }
             }
         }
@@ -130,7 +97,7 @@ int main()
         {
             clearCells();
         }
-
+        /*
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) && clock.getElapsedTime().asSeconds()>0.2)
         {
             clock.restart();
@@ -142,30 +109,42 @@ int main()
             for(unsigned int i {0}; i<boxes.size();++i)
             {
                 nextGen(i);
-
-            }
-            for(unsigned int i {0}; i<boxes.size();++i)
-            {
                 boxes[i].nAliveAdj = 0;
 
             }
+
+        }*/
+
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+        {
+            start = true;
         }
 
-       /* while(start)
+        while(start)
         {
-            for(unsigned int i {0}; i<boxes.size();++i)
+            if(clock.getElapsedTime().asSeconds()>0.02)
+            {
+                clock.restart();
+
+                for(unsigned int i {0}; i<boxes.size();++i)
+                    {
+                        checkCells(i);
+
+                    }
+
+                for(unsigned int i {0}; i<boxes.size();++i)
                 {
-                    checkCells(i);
                     nextGen(i);
+                    boxes[i].nAliveAdj = 0;
+
                 }
+            }
 
             window.clear(sf::Color::White);
             for(auto& box : boxes) window.draw(box.shape);
             window.display();
 
-        }*/
-
-
+        }
         //Render
         window.clear(sf::Color::White);
 

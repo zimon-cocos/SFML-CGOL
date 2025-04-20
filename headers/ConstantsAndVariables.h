@@ -19,7 +19,7 @@ int boxesY {0};
 
 //colors
 
-sf::Color gray(128,128,128);
+sf::Color dead(128,128,128);
 sf::Color alive(173,255,47);
-
+sf::Color background(102, 108, 138);
 
