@@ -73,7 +73,7 @@ int main()
 
         }
 
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && clock.getElapsedTime().asSeconds() > 0.2)
+        if((sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) || (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))) && clock.getElapsedTime().asSeconds() > 0.2)
         {
             clock.restart();
             auto mousePos = sf::Mouse::getPosition(window);
@@ -82,11 +82,23 @@ int main()
             {
                 if(boxes[i].shape.getGlobalBounds().contains(transMousePos))
                 {
-                    boxes[i].shape.setFillColor(sf::Color::Black);
-                    std::cout<< "[" << boxes[i].gridXValue << "," << boxes[i].gridYValue << "]\n";
-                    std::cout << "Klikol si na " << i << '\n';
+                    if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+                    {
+                        checkCells(i);
+                        nextGen(i);
+                        //boxes[i].shape.setFillColor(sf::Color::Black);
+                        std::cout<< "[" << boxes[i].gridXValue << "," << boxes[i].gridYValue << "]\n";
+                        std::cout << "Klikol si na " << i << '\n';
+                    }
+                    else
+                    {
+                        boxes[i].shape.setFillColor(sf::Color::Magenta);
+                        boxes[i].alive = true;
+                        boxes[i].unpopulated = false;
+                    }
 
-                    checkCells(i);
+
+
                    /* //sused S
                     boxes[i-boxesX].shape.setFillColor(sf::Color::Green);
                     //sused J
@@ -111,15 +123,47 @@ int main()
             }
         }
 
-        if(start)
-        {
 
-        }
+
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
         {
             clearCells();
         }
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) && clock.getElapsedTime().asSeconds()>0.2)
+        {
+            clock.restart();
+            for(unsigned int i {0}; i<boxes.size();++i)
+            {
+                checkCells(i);
+
+            }
+            for(unsigned int i {0}; i<boxes.size();++i)
+            {
+                nextGen(i);
+
+            }
+            for(unsigned int i {0}; i<boxes.size();++i)
+            {
+                boxes[i].nAliveAdj = 0;
+
+            }
+        }
+
+       /* while(start)
+        {
+            for(unsigned int i {0}; i<boxes.size();++i)
+                {
+                    checkCells(i);
+                    nextGen(i);
+                }
+
+            window.clear(sf::Color::White);
+            for(auto& box : boxes) window.draw(box.shape);
+            window.display();
+
+        }*/
 
 
         //Render

@@ -12,7 +12,11 @@ struct Box
     float centerPosY {0};
 
 
-    bool wasClicked {false};
+    bool alive {false};
+    bool unpopulated {true};
+
+    int nAliveAdj {0};
+    int nDeadAdj {0};
 
     int gridXValue {0};
     int gridYValue {0};
